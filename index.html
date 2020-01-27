@@ -32,22 +32,34 @@
                         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
                             data-target="#myModal">Log In</button>
 
-                        <!-- Modal -->
-                        <div id="myModal" class="modal fade" role="dialog">
+                        <!--Modal-->
+                        <div id="EmbrokerModal" class="modal fade" role="dialog">
                             <div class="modal-dialog modal-lg">
-
-                                <!-- Modal content-->
+                                <!--Modal Contentl-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         <h4 class="modal-title">Close</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="auth" method="POST">
-                                            <input type="text" name="emailAddress" placeholder="email" required>
-                                            <input class="form__input" id="password" placeholder="password"
-                                                type="password" name="password" required minlength="8"
-                                                aria-describedby="passwordHint" autocomplete="current-password">
+                                        <form
+                                            action="https://embroker-test.britecorepro.com/api/v2/policies/new_policy_information?api_key=8d368a8d5ef8384610efaee8c320d3e0aebf052377804f8e90e822e7"
+                                            method="POST">
+                                            Policy Number
+                                            <input type="text" name="policy number" placeholder="Leave Blank">
+                                            Manual Policy Number
+                                            <input type="text" name="policy number" placeholder="Leave Blank">
+                                            Inception Date
+                                            <input type="text" name="policy number" placeholder="Leave Blank">
+                                            Term type
+                                            <input type="text" name="policy number" placeholder="Leave Blank">
+                                            Expiration Date
+                                            <input type="text" name="policy number" placeholder="Leave Blank">
+                                            Renewal Term type
+                                            <input type="text" name="policy number" placeholder="Leave Blank">
+                                            Is Renewal
+                                            <input type="text" name="policy number" placeholder="Leave Blank">
+
                                             <input type="submit">
                                         </form>
                                     </div>
@@ -56,7 +68,6 @@
                                             data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </li>
@@ -85,10 +96,45 @@
     <div class="container-fluid padding">
         <div class="row text-center padding">
             <div class="col-xs-12 col-sm-6 col-md-4">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                    data-target="#EmbrokerModal">Embroker</button>
+                <!--Modal-->
+                <div id="EmbrokerModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!--Modal Contentl-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Close</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form
+                                    action="https://embroker-test.britecorepro.com/api/v2/policies/new_policy_information?api_key=8d368a8d5ef8384610efaee8c320d3e0aebf052377804f8e90e822e7"
+                                    method="POST">
+                                    Policy Number
+                                    <input type="text" name="policy number" placeholder="Leave Blank">
+                                    Manual Policy Number
+                                    <input type="text" name="policy number" placeholder="Leave Blank">
+                                    Inception Date
+                                    <input type="text" name="policy number" placeholder="Leave Blank">
+                                    Term type
+                                    <input type="text" name="policy number" placeholder="Leave Blank">
+                                    Expiration Date
+                                    <input type="text" name="policy number" placeholder="Leave Blank">
+                                    Renewal Term type
+                                    <input type="text" name="policy number" placeholder="Leave Blank">
+                                    Is Renewal
+                                    <input type="text" name="policy number" placeholder="Leave Blank">
 
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Embroker
-                </button>
-                <p></p>
+                                    <input type="submit">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class=" col-xs-12 col-sm-6 col-md-4">
 
