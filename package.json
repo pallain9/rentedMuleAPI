@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm run migrate:dev && npm run server:dev",
+    "migrate:dev": "./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
+    "server:dev": "./node_modules/.bin/nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +21,7 @@
   },
   "homepage": "https://github.com/pallain9/rentedMuleAPI#readme",
   "dependencies": {
+    "basic-auth": "^2.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
@@ -30,6 +35,7 @@
     "popper.js": "^1.16.1",
     "pug": "^2.0.4",
     "pug-cli": "^1.0.0-alpha6",
+    "request": "^2.88.0",
     "save": "^2.4.0",
     "sequelize": "^5.21.3",
     "sequelize-cli": "^5.5.1",

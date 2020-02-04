@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embroker Insert</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="./index.js"></script>
+    <script src="../controllers/web.js"></script>
+    <link href="./PurpleAdmin-Free-Admin-Template-master/assets/css/main.css" rel="stylesheet">
+    <link href="../styles/main.css" rel="stylesheet">
+
+    <header>
+        <div class="frame">
+            <img style="width: 360px; background-size: auto; background-color: black"
+                src="../images/Rented-Mule-Header.png" alt="Rented Mule Consulting">
+            <button style="float: right; margin-top: 50px; margin-right: 40px; color: white; background-color:black"
+                type="menu" onclick="window.location.href ='./new.html'">Main Menu</button>
+        </div>
+    </header>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4"
+                src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72"
+                height="72">
+            <h2>Insert Form</h2>
+            <p class="lead">The form below will be used to submit test case information for contacts & policies.</p>
+        </div>
+        <form name="feedback" action="javascript:void(0)">
+            <label>
+                <input type="radio" id="yes" name="yesOrNo" value="yes" onchange="displayQuestion(this.value)" /> New
+                Policy
+            </label>
+            <br>
+            <br>
+            <label>
+                <input type="radio" id="no" name="yesOrNo" value="no" onchange="displayQuestion(this.value)" /> New
+                Contact
+            </label>
+            <div class="row">
+                <div class="col">
+                    <form name="type">
+                        <form class="needs-validation" onsubmit="policyFormData()">
+                            <div id="yesQuestion" style="display:none;">
+                                <h4 class=" mb-3">Policy Insert</h4>
+                                <div class="mb-3">
+                                    <label for="policyNumber">Policy Number</label>
+                                    <input type="text" class="form-control" id="policyNumber" placeholder="" value="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inceptionDate">Inception Date</label>
+                                    <input type="date" class="form-control" id="inceptionDate" placeholder="" value=""
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="termType">Term Type</label>
+                                    <input type="text" class="form-control" id="termType" placeholder="" value="">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="expirationDate">Expiration Date</label>
+                                    <input type="text" class="form-control" id="expirationDate" placeholder="" value="">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="renewalTermType">Renewal Term Type</label>
+                                    <input type="text" class="form-control" id="renewalTermType" placeholder=""
+                                        value="">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="isRenewal">Is Renewal</label>
+                                    <input type="text" class="form-control" id="isRenewal" placeholder="" value=""
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="underWritingQuestions">Underwriting Questions</label>
+                                    <input type="text" class="form-control" id="underwritingQuestions" placeholder=""
+                                        value="">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="asAgent">As Agent</label>
+                                    <input type="text" class="form-control" id="asAgent" placeholder="" value="">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="manualPolicyNumber">Manual Policy Number</label>
+                                    <input type="text" class="form-control" id="manualPolicyNumber" placeholder=""
+                                        value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="noQuestion" style="display:none;">
+                            <h4 class=" mb-3">Contact Insert</h4>
+                            <div class="mb-3">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Valid first name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="type">Type</label>
+                                <input type="text" class="form-control" id="type" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dateOfBirth">Date of Birth</label>
+                                <input type="date" class="form-control" id="dateOfBirth" placeholder="" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="socialSecurityNumber">Social Security Number</label>
+                                <input type="text" class="form-control" id="socialSecurityNumber"
+                                    placeholder="123-45-6789" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="feinTax">Fein Tax</label>
+                                <input type="text" class="form-control" id="feinTax" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="legalEntityType">Legal Entity Type</label>
+                                <input type="text" class="form-control" id="legalEntityType" placeholder="" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dateBusinessStarted">Date Business Started</label>
+                                <input type="date" class="form-control" id="dateBusinessStarted" placeholder="" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phones">Phones</label>
+                                <input type="text" class="form-control" id="phones" placeholder="" value="" required>
+
+                                <br>
+                                <select for="phoneType">
+                                    <option id="phoneType" value="Work">Work</option>
+                                    <option id="phoneType" value="Home">Home</option>
+                                    <option id="phoneType" value="Cell">Cell</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Valid phone is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cognitoUsername">Cognito Username</label>
+                                <input type="text" class="form-control" id="cognitoUsername" placeholder="" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="isGod">Is God?
+                                    <br>
+                                    <br>
+                                    <input type="radio" cid="yes" name="yesOrNo" value="yes" />
+                                    <emsp>True</emsp>
+                                    <br>
+                                    <br>
+                                    <input type="radio" cid="no" name="yesOrNo" value="no" />
+                                    <emsp>False</emsp>
+                                </label>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="roles">Roles</label>
+                                <input type="text" class="form-control" id="roles" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmationEmail">Confirmation Email</label>
+                                <input type="text" class="form-control" id="confirmationEmail" placeholder="" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+                    </form>
+        </form>
+    </div>
+    </div>
+    </form>
+    </div>
+
+</head>

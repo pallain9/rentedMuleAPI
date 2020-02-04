@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rented-Mule</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="./index.js"></script>
+    <link href="./PurpleAdmin-Free-Admin-Template-master/assets/css/main.css" rel="stylesheet">
+    <link href="../styles/main.css" rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://rented-mule.com/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" onclick="window.location.href ='./Embroker.html'">Embroker</a>
+                        <a class="dropdown-item" onclick="window.location.href ='./corvus.html'">Corvus</a>
+                        <a class="dropdown-item" onclick="window.location.href ='./soda.html'">Soda</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3"><br>Client Test Case Importer</h1>
+                <p>This is a web page created to allow posting of test data.</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Embroker</h2>
+                    <p>Select the button below to add test data for Embroker client.</p>
+                    <button id="mybtn" class="btn btn-secondary" onclick="window.location.href ='./Embroker.html'">Click
+                        Here!</button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Corvus</h2>
+                    <p>Select the button below to add test data for Corvus client. </p>
+                    <p><a class="btn btn-secondary" href="./corvus.html" role="button">Click Here!</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Soda</h2>
+                    <p>Select the button below to add test data for Soda client.</p>
+                    <p><a class="btn btn-secondary" href="./soda.html" role="button">Click Here!</a></p>
+                </div>
+            </div>
+
+            <hr>
+
+        </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+        <p>&copy; Rented-Mule</p>
+    </footer>
