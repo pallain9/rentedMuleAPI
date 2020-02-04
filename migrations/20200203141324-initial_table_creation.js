@@ -12,28 +12,17 @@ module.exports = {
       fein_tax: { type: Sequelize.STRING },
       legal_entity_type: { type: Sequelize.STRING },
       date_business_started: { type: Sequelize.STRING },
-      phones: {
-        phone: { type: Sequelize.STRING },
-        type: { type: Sequelize.STRING }
-      },
-      emails: {
-        email: { type: Sequelize.STRING },
-        type: { type: Sequelize.STRING }
-      },
-      addresses: {
-        address_line1: { type: Sequelize.STRING },
-        address_city: { type: Sequelize.STRING },
-        address_state: { type: Sequelize.STRING },
-        address_zip: { type: Sequelize.STRING },
-        address_country: { type: Sequelize.STRING },
-        address_city_other: { type: Sequelize.STRING },
-        address_county_other: { type: Sequelize.STRING },
-        address_state_other: { type: Sequelize.STRING },
-        type: { type: Sequelize.STRING },
-      },
+
+      phone: { type: Sequelize.STRING },
+
+
+      email: { type: Sequelize.STRING },
+
+      addresses: { type: Sequelize.STRING },
+
       cognito_username: { type: Sequelize.STRING },
       is_god: { type: Sequelize.BOOLEAN },
-      roles: {},
+      roles: { type: Sequelize.STRING },
       username: { type: Sequelize.STRING },
       confirmation_email: { type: Sequelize.STRING },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },

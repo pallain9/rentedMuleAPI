@@ -42,19 +42,11 @@ async function createPolicy(request, response) {
 
 const bodyParser = require('body-parser')
 const express = require('express')
-const { newContact } = require('./controllers/web')
+const { postContact } = require('./controllers/web')
 
 const app = express()
 
-/*app.get('/movies', getMovies)
 
-app.get('/movies/:id', getMoviesById)
-
-app.get('/genre/:id', matchingGenres)
-
-app.get('/director/:id', getDirectorByID)
-
-app.post('/movies', bodyParser.json(), postMovie)*/
 
 const server = app.listen(1337, () => { console.log('listening on port 1337') })
 
