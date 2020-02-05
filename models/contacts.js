@@ -1,6 +1,8 @@
+const models = require('./models')
+
 
 const Contacts = (connection, Sequelize) => {
-    return connection.define('contacts', {
+    return connection.define('new_contact', {
         id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
         name: { type: Sequelize.STRING },
         doing_business_as: { type: Sequelize.STRING },
@@ -11,9 +13,9 @@ const Contacts = (connection, Sequelize) => {
         legal_entity_type: { type: Sequelize.STRING },
         date_business_started: { type: Sequelize.STRING },
 
-        phone: { type: Sequelize.STRING },
+        phones: { type: Sequelize.JSON },
 
-        email: { type: Sequelize.STRING },
+        emails: { type: Sequelize.JSON },
 
         addresses: { type: Sequelize.STRING },
         cognito_username: { type: Sequelize.STRING },
