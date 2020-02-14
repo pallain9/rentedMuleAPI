@@ -5,11 +5,11 @@ function displayQuestion(answer) {
 
     document.getElementById(answer + 'Question').style.display = "block";
 
-    if (answer == "yes") { // hide the div that is not selected
+    if (answer === "yes") { // hide the div that is not selected
 
         document.getElementById('noQuestion').style.display = "none";
 
-    } else if (answer == "no") {
+    } else if (answer === "no") {
 
         document.getElementById('yesQuestion').style.display = "none";
 
@@ -51,9 +51,10 @@ async function assignRole(request, response) {
     })
     if (!contact_id || !role_name)
         return assignRole
-            ? response.render('embroker', { newContact })
-            : response.sendStatus(404)
+    console.log(assignRole)
+        ? response.render('role', { assignRole })
+        : response.sendStatus(404)
 }
 
 
-module.exports = { getEmbroker, createContact, getIndex, assignRole, displayQuestion }
+module.exports = { getEmbroker, createContact, getIndex, assignRole, displayQuestion, assignRole }

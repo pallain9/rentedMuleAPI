@@ -9,9 +9,15 @@ head
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
   script(src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
   script(src='../index.js')
-  script(src='../controllers/web.js')
-  link(href='../static/embroker.css' rel='stylesheet')
+  script  
+    include ../controllers/web.js
   script(src='../newContact/js/validation.js')
+  style
+    include ../static/embroker.css
+  style 
+    include ../static/main.css 
+  style 
+    include ../static/form.css
 nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
   a.navbar-brand(href='#') Navbar
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
@@ -42,33 +48,26 @@ main.container(role='main')
   form(name='feedback' action='javascript:void(0)')
     label
       input#yes(type='radio' name='yesOrNo' value='yes' onchange='displayQuestion(this.value)')
-      | Yes
+      | Create New Contact
     br
     br
     label
       input#no(type='radio' name='yesOrNo' value='no' onchange='displayQuestion(this.value)')
-      | No
+      | Assign Role
     #yesQuestion.zf-templateWidth(style='display:none; margin-top: 100px')
       form#form(action='https://forms.zohopublic.com/fivetoolconsulting/form/ClientDetails/formperma/TsuZv7LiF3zhXw1Mu9648k2GxatSXEebgHvZMWhK8z0/htmlRecords/submit' name='form' method='POST' onsubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data')
         input(type='hidden' name='zf_referrer_name' value='')
-        // To Track referrals , place the referrer name within the " " in the above hidden input field
-        input(type='hidden' name='zf_redirect_url' value='')
-        // To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field
-        input(type='hidden' name='zc_gad' value='')
-        // If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM
+        input(type='hidden' name='zf_redirect_url' value='')      
+        input(type='hidden' name='zc_gad' value='')     
         .zf-templateWrapper
-          // -------template Header Starts Here--------
           ul.zf-tempHeadBdr
             li.zf-tempHeadContBdr
               h2.zf-frmTitle
                 em Create New Contact
               p.zf-frmDesc Enter the details of all incoming clients.
               .zf-clearBoth
-          // -------template Header Ends Here--------
-          // -------template Container Starts Here--------
           .zf-subContWrap.zf-leftAlign
             ul
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-medium
                 label.zf-labelName
                   | Name
@@ -78,8 +77,6 @@ main.container(role='main')
                   p#SingleLine_error.zf-errorMessage(style='display:none;') Invalid value
                   p.zf-instruction First and Last Name
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-medium
                 label.zf-labelName
                   | Doing Business As 
@@ -89,8 +86,6 @@ main.container(role='main')
                     input(type='text' name='SingleLine1' checktype='c1' value='' maxlength='255' fieldtype='1')
                   p#SingleLine1_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Radio Starts Here--------
               li.zf-radio.zf-tempFrmWrapper.zf-oneColumns
                 label.zf-labelName
                   | Type
@@ -105,8 +100,6 @@ main.container(role='main')
                     .zf-clearBoth
                   p#Radio1_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Radio Ends Here--------
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-medium
                 label.zf-labelName
                   | DOB
@@ -116,8 +109,6 @@ main.container(role='main')
                   p#SingleLine2_error.zf-errorMessage(style='display:none;') Invalid value
                   p.zf-instruction YYYY-MM-DD
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | SSN
@@ -126,8 +117,6 @@ main.container(role='main')
                     input(type='text' name='SingleLine3' checktype='c1' value='123-45-6789' maxlength='255' fieldtype='1')
                   p#SingleLine3_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | FEIN Tax
@@ -136,8 +125,6 @@ main.container(role='main')
                     input(type='text' name='SingleLine4' checktype='c1' value='12-3456789' maxlength='255' fieldtype='1')
                   p#SingleLine4_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | Legal Entity Type
@@ -147,8 +134,6 @@ main.container(role='main')
                   p#SingleLine5_error.zf-errorMessage(style='display:none;') Invalid value
                   p.zf-instruction S-Corp, LLC, etc.
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | Date Business Started
@@ -158,8 +143,6 @@ main.container(role='main')
                   p#SingleLine6_error.zf-errorMessage(style='display:none;') Invalid value
                   p.zf-instruction YYYY-MM-DD
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | Phone
@@ -169,8 +152,6 @@ main.container(role='main')
                   p#SingleLine7_error.zf-errorMessage(style='display:none;') Invalid value
                   p.zf-instruction 123-456-7890
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Radio Starts Here--------
               li.zf-radio.zf-tempFrmWrapper.zf-sideBySide
                 label.zf-labelName
                   | Phone Type
@@ -189,8 +170,6 @@ main.container(role='main')
                     .zf-clearBoth
                   p#Radio_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Radio Ends Here--------
-              // -------Email Starts Here--------
               li.zf-tempFrmWrapper.zf-medium
                 label.zf-labelName
                   | Email
@@ -199,8 +178,6 @@ main.container(role='main')
                     input(fieldtype='9' type='text' maxlength='255' name='Email' checktype='c5' value='')
                   p#Email_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Email Ends Here--------
-              // -------Radio Starts Here--------
               li.zf-radio.zf-tempFrmWrapper.zf-sideBySide
                 label.zf-labelName
                   | Email type
@@ -216,9 +193,6 @@ main.container(role='main')
                     .zf-clearBoth
                   p#Radio2_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Radio Ends Here--------
-              // address
-              // -------Address Starts Here--------
               li.zf-tempFrmWrapper.zf-address.zf-addrlarge
                 label.zf-labelName
                   | Address
@@ -514,8 +488,6 @@ main.container(role='main')
                     .zf-clearBoth
                     p#Address_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-eclearBoth
-              // -------Address Ends Here--------
-              // -------Radio Starts Here--------
               li.zf-radio.zf-tempFrmWrapper.zf-oneColumns
                 label.zf-labelName
                   | Address type
@@ -530,8 +502,6 @@ main.container(role='main')
                     .zf-clearBoth
                   p#Radio3_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Radio Ends Here--------
-              // -------Single Line Starts Here--------
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | Cognito Username
@@ -540,8 +510,6 @@ main.container(role='main')
                     input(type='text' name='SingleLine8' checktype='c1' value='' maxlength='255' fieldtype='1')
                   p#SingleLine8_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Single Line Ends Here--------
-              // -------Radio Starts Here--------
               li.zf-radio.zf-tempFrmWrapper.zf-oneColumns
                 label.zf-labelName
                   | Is God
@@ -556,9 +524,7 @@ main.container(role='main')
                     .zf-clearBoth
                   p#Radio4_error.zf-errorMessage(style='display:none;') Invalid value
                   p.zf-instruction Leave False
-                .zf-clearBoth
-              // -------Radio Ends Here--------
-              // -------Multiple Line Starts Here--------
+                .zf-clearBoth 
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | Roles
@@ -568,8 +534,6 @@ main.container(role='main')
                   p#MultiLine1_error.zf-errorMessage(style='display:none;') Invalid value
                   p.zf-instruction List all applicable roles
                 .zf-clearBoth
-              // -------Multiple Line Ends Here--------
-              // -------Number Starts Here--------
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | Username 
@@ -579,8 +543,6 @@ main.container(role='main')
                     input(type='text' name='Number' checktype='c2' value='' maxlength='18')
                   p#Number_error.zf-errorMessage(style='display:none;') Invalid value
                 .zf-clearBoth
-              // -------Number Ends Here--------
-              // -------Number Starts Here--------
               li.zf-tempFrmWrapper.zf-small
                 label.zf-labelName
                   | Confirmation Email 
@@ -589,21 +551,73 @@ main.container(role='main')
                   span
                     input(type='text' name='Number1' checktype='c2' value='' maxlength='18')
                   p#Number1_error.zf-errorMessage(style='display:none;') Invalid value
-                .zf-clearBoth
-              // -------Number Ends Here--------
-          // -------template Container Starts Here--------
+                .zf-clearBoth     
       ul
         li.zf-fmFooter
-          button.zf-submitColor Submit
-    // 'zf-templateWrapper' ends
-  // 'zf-templateWidth' ends
-  script(type='text/javascript').
-    var zf_DateRegex = new RegExp("^(?:(?:19|20)[0-9]{2})[-]([0][1-9]|1[012])[-](([0][1-9])|([1-2][0-9])|([3][0-1]))$");
-    var zf_MandArray = [ "SingleLine1", "Radio", "Radio2", "Address_AddressLine1", "Address_AddressLine2", "Address_City", "Address_Region", "Address_ZipCode", "Address_Country", "Number", "Number1"];
-    var zf_FieldArray = [ "SingleLine", "SingleLine1", "Radio1", "SingleLine2", "SingleLine3", "SingleLine4", "SingleLine5", "SingleLine6", "SingleLine7", "Radio", "Email", "Radio2", "Address_AddressLine1", "Address_AddressLine2", "Address_City", "Address_Region", "Address_ZipCode", "Address_Country", "Radio3", "SingleLine8", "Radio4", "MultiLine1", "Number", "Number1"];
-    var isSalesIQIntegrationEnabled = false;
-    var salesIQFieldsArray = [];
-br
+          button.zf-submitColor Submit 
+          
+    script(type='text/javascript').
+      var zf_DateRegex = new RegExp("^(?:(?:19|20)[0-9]{2})[-]([0][1-9]|1[012])[-](([0][1-9])|([1-2][0-9])|([3][0-1]))$");
+      var zf_MandArray = [ "SingleLine1", "Radio", "Radio2", "Address_AddressLine1", "Address_AddressLine2", "Address_City", "Address_Region", "Address_ZipCode", "Address_Country", "Number", "Number1"];
+      var zf_FieldArray = [ "SingleLine", "SingleLine1", "Radio1", "SingleLine2", "SingleLine3", "SingleLine4", "SingleLine5", "SingleLine6", "SingleLine7", "Radio", "Email", "Radio2", "Address_AddressLine1", "Address_AddressLine2", "Address_City", "Address_Region", "Address_ZipCode", "Address_Country", "Radio3", "SingleLine8", "Radio4", "MultiLine1", "Number", "Number1"];
+      var isSalesIQIntegrationEnabled = false;
+      var salesIQFieldsArray = [];
+
+    #noQuestion.zf-templateWidth(style='display:none; margin-top: 100px')
+      form#form(action='localhost:1337/role' name='form' method='POST' onsubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data')
+        input(type='hidden' name='zf_referrer_name' value='')
+        // To Track referrals , place the referrer name within the " " in the above hidden input field
+        input(type='hidden' name='zf_redirect_url' value='')
+        // To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field
+        input(type='hidden' name='zc_gad' value='')
+        // If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM
+        .zf-templateWrapper
+          // -------template Header Starts Here--------
+          ul.zf-tempHeadBdr
+            li.zf-tempHeadContBdr
+              h2.zf-frmTitle
+                em ClientRoles
+              p.zf-frmDesc
+              .zf-clearBoth
+          // -------template Header Ends Here--------
+          // -------template Container Starts Here--------
+          .zf-subContWrap.zf-topAlign
+            ul
+              // -------Single Line Starts Here--------
+              li.zf-tempFrmWrapper.zf-small
+                label.zf-labelName
+                  | Contact ID 
+                  em.zf-important *
+                .zf-tempContDiv
+                  span
+                    input(type='text' name='contact_id' checktype='c1' value='' maxlength='255' fieldtype='1')
+                  p#SingleLine_error.zf-errorMessage(style='display:none;') Invalid value
+                .zf-clearBoth
+              // -------Single Line Ends Here--------
+              // -------Single Line Starts Here--------
+              li.zf-tempFrmWrapper.zf-small
+                label.zf-labelName
+                  | Role Name 
+                  em.zf-important *
+                .zf-tempContDiv
+                  span
+                    input(type='text' name='role_name' checktype='c1' value='' maxlength='255' fieldtype='1')
+                  p#SingleLine1_error.zf-errorMessage(style='display:none;') Invalid value
+                .zf-clearBoth
+              // -------Single Line Ends Here--------
+          // -------template Container Starts Here--------
+          ul
+            li.zf-fmFooter
+              button.zf-submitColor Submit
+        // 'zf-templateWrapper' ends
+    // 'zf-templateWidth' ends
+    script(type='text/javascript').
+      var zf_DateRegex = new RegExp("^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$");
+      var zf_MandArray = [ "SingleLine", "SingleLine1"];
+      var zf_FieldArray = [ "SingleLine", "SingleLine1"];
+      var isSalesIQIntegrationEnabled = false;
+      var salesIQFieldsArray = [];
+
 br
 footer.container
   p &copy; Rented-Mule
