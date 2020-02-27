@@ -55,7 +55,7 @@ main.container(role='main')
       input#no(type='radio' name='yesOrNo' value='no' onchange='displayQuestion(this.value)')
       | Assign Role
     #yesQuestion.zf-templateWidth(style='display:none; margin-top: 100px')
-      form#form(action='https://forms.zohopublic.com/fivetoolconsulting/form/ClientDetails/formperma/TsuZv7LiF3zhXw1Mu9648k2GxatSXEebgHvZMWhK8z0/htmlRecords/submit' name='form' method='POST' onsubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data')
+      form#form(onSubmit='return assignRole()')
         input(type='hidden' name='zf_referrer_name' value='')
         input(type='hidden' name='zf_redirect_url' value='')      
         input(type='hidden' name='zc_gad' value='')     

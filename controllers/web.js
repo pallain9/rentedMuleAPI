@@ -18,6 +18,33 @@ function displayQuestion(answer) {
 }
 
 
+async function validateContact(request, response) {
+    let contact_id
+    let issue = await axios.get(`https://massprinting.atlassian.net/rest/api/3/search?jql=project=SD2`,
+        {
+            auth: {
+                username: 'pallain@massprinting.com',
+                password: '53pEsbRGt9cG7h4m3DX5CDDF'
+            }
+
+
+        })
+
+    let selectedData = []
+    console.log(selectedData)
+    for (i = 0; i < issue.data.issues.length; i++) {
+        selectedData.push({ id: issue.data.issues[i].id, link: issue.data.issues[i].self, key: issue.data.issues[i].key })
+    }
+
+    return selectedData
+        ? response.render('issue', { selectedData })
+        : response.sendStatus(404)
+
+}
+
+
+
+
 async function getIndex(request, response) {
     return response.render('index')
 }
