@@ -1,0 +1,68 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  title Rented-Mule
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+  script(src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
+  script(src='./index.js')
+  script(src='../controllers/web.js')
+  link(href='./PurpleAdmin-Free-Admin-Template-master/assets/css/main.css' rel='stylesheet')
+  link(href='../styles/main.css' rel='stylesheet')
+nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+  a.navbar-brand(href='#') Navbar
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarsExampleDefault.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='http://rented-mule.com/')
+          | Home 
+          span.sr-only (current)
+      li.nav-item.dropdown
+        a#dropdown01.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Dropdown
+        .dropdown-menu(aria-labelledby='dropdown01')
+          a.dropdown-item(onclick="window.location.href ='./Embroker.html'") Embroker
+          a.dropdown-item(onclick="window.location.href ='./corvus.html'") Corvus
+          a.dropdown-item(onclick="window.location.href ='./soda.html'") Soda
+    form.form-inline.my-2.my-lg-0
+      input.form-control.mr-sm-2(type='text' placeholder='Search' aria-label='Search')
+      button.btn.btn-primary(type='submit') Search
+main(role='main')
+  // Main jumbotron for a primary marketing message or call to action
+  .jumbotron
+    .container
+      h1.display-3
+        br
+        | Client Test Case Importer
+      p This is a web page created to allow posting of test data.
+      p
+        a.btn.btn-primary.btn-lg(href='#' role='button') Learn more &raquo;
+  .container
+    // Example row of columns
+    .row
+      .col-md-4
+        h2 Embroker
+        p Select the button below to add test data for Embroker client.
+        button#mybtn.btn.btn-secondary(onclick="window.location.href ='embroker'")
+          | Click
+          | Here!
+        #myModal.modal
+          .modal-content
+      .col-md-4
+        h2 Corvus
+        p Select the button below to add test data for Corvus client. 
+        p
+          a.btn.btn-secondary(href='./corvus.html' role='button') Click Here!
+      .col-md-4
+        h2 Soda
+        p Select the button below to add test data for Soda client.
+        p
+          a.btn.btn-secondary(href='./soda.html' role='button') Click Here!
+    hr
+  // /container
+footer.container
+  p &copy; Rented-Mule
